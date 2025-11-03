@@ -85,7 +85,10 @@ int main()
         else if (choice == 3)
         {
             if (myShape.size() == 0)
+            {
                 cout << "No Shape Present!\nAdd Shapes." << endl;
+                continue;
+            }
             cout << "After sorting by area:" << endl;
             sort(myShape.begin(), myShape.end(), comparebyArea);
             for (int i = 0; i < myShape.size(); i++)
@@ -97,7 +100,10 @@ int main()
         else if (choice == 4)
         {
             if (myShape.size() == 0)
+            {
                 cout << "No Shape Present!\nAdd Shapes." << endl;
+                continue;
+            }
             bool found = false;
             double p;
             cout << "Enter you want to Search : ";
@@ -117,7 +123,10 @@ int main()
         else if (choice == 5)
         {
             if (myShape.size() == 0)
-                cout << "No Shape Present to delete!" << endl;
+            {
+                cout << "No Shape Present!\nAdd Shapes." << endl;
+                continue;
+            }
             for (int i = 0; i < myShape.size(); i++)
             {
                 delete myShape[i];
@@ -128,11 +137,14 @@ int main()
         else if (choice == 6)
         {
             if (myShape.size() == 0)
-                cout << "No Shape Present to delete!" << endl;
+            {
+                cout << "No Shape Present!\nAdd Shapes." << endl;
+                continue;
+            }
             myShape[myShape.size() - 1]->displayShape();
             cout << "Deleted!" << endl;
-            delete myShape[myShape.size() - 1];
-            myShape.erase(myShape.end());
+            delete myShape.back();
+            myShape.pop_back();
         }
         else if (choice == 7)
         {

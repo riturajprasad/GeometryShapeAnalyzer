@@ -76,7 +76,10 @@ int main()
         else if (choice == 2)
         {
             if (myShape.size() == 0)
+            {
                 cout << "No Shape Present!\nAdd Shapes." << endl;
+                continue;
+            }
             for (int i = 0; i < myShape.size(); i++)
             {
                 myShape[i]->displayShape();
@@ -130,9 +133,9 @@ int main()
             for (int i = 0; i < myShape.size(); i++)
             {
                 delete myShape[i];
-                myShape.clear();
-                cout << "All Shape delete!" << endl;
             }
+            myShape.clear();
+            cout << "All Shape delete!" << endl;
         }
         else if (choice == 6)
         {
@@ -151,9 +154,8 @@ int main()
             for (int i = 0; i < myShape.size(); i++)
             {
                 delete myShape[i];
-                myShape.clear();
-                cout << "Delete last Shape!" << endl;
             }
+            myShape.clear();
             break;
         }
         else
